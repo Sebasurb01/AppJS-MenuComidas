@@ -1,35 +1,51 @@
+const btn = document.getElementById("btn");
+const menu = document.querySelector("#menu");
 
-function mostrarMenu() {
-    let mensajeMenu = " Menú:\n        \n1. Pizza   \n2. Hamburguesa \n3. Sushi  \n4. Tacos  \n Ingrese el numero de tu pedido";
-    let seleccion = prompt(mensajeMenu);
+function mostrarPrecio(rutaImagen, nombre, precio) {
+    let item = document.getElementById("item");
 
-   
-    if (seleccion === null) {
-        alert("Gracias por su visita");
-    } else {
-        
-        seleccion = parseInt(seleccion);
+item.innerHTML="";
 
-       
-        switch (seleccion) {
-            case 1:
-                alert("Tu pedido fue Pizza y tiene un costo de $10.000");
-                break;
-            case 2:
-                alert("Tu pedido fue Hamburguesa y tiene un costo de $15.000");
-                break;
-            case 3:
-                alert("Tu pedido fue Sushi y tiene un costo de $18.000");
-                break;
-            case 4:
-                alert("Tu pedido fue Tacos y tiene un costo de $25.000");
-                break;
-            default:
-                alert("El número seleccionado no está en el menú");
-                break;
-        }
-    }
+    const img = document.createElement("img");
+    img.src = rutaImagen;
+    img.alt = nombre;
+
+    const container = document.createElement("div");
+    container.className = "container";
+
+    const nombreItem = document.createElement("h4");
+    nombreItem.textContent = nombre; 
+
+    const precioItem = document.createElement("p");
+    precioItem.textContent = `Precio: ${precio} COP`;
+
+    container.appendChild(nombreItem);
+    container.appendChild(precioItem);
+
+    item.innerHTML = ''; 
+    item.appendChild(img);
+    item.appendChild(container);
 }
 
+btn.addEventListener("click", (event) => {
+    event.preventDefault();
 
-mostrarMenu();
+    console.log(menu.selectedIndex);
+
+    switch (menu.selectedIndex) {
+        case 1:
+            mostrarPrecio("img/helado.png", "Helado", "3.400");
+            break; 
+        case 2:
+            mostrarPrecio("img/hamburguesa.png", "Hamburguesa", "6.000");
+            break; 
+        case 3:
+            mostrarPrecio("img/perro.png", "Hot Dog", "4.500");
+            break;
+        case 4:
+            mostrarPrecio("img/ensalada.png", "Ensalada", "5.000");
+            break; 
+        default:
+            console.log("Seleccione una opción válida.");
+    }
+});
