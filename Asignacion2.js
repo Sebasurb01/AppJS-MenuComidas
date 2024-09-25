@@ -43,14 +43,14 @@ console.log("\n6. Ejercicio de indexOf() y lastIndexOf():");
 
 let menu6 = ["Helado", "Pizza", "Helado", "Tarta", "Pizza"];
 console.log("Array6", menu6);
-let primeraPizza = menu6.indexOf("Pizza"); // 
+let primeraPizza = menu6.indexOf("Pizza"); 
 console.log("Primera aparición de 'Pizza':", primeraPizza);
 
-let ultimaPizza = menu6.lastIndexOf("Pizza"); // 
+let ultimaPizza = menu6.lastIndexOf("Pizza"); 
 console.log("Última aparición de 'Pizza':", ultimaPizza);
 
-let primeraHelado = menu6.indexOf("Helado"); // 
+let primeraHelado = menu6.indexOf("Helado"); 
 console.log("Primera aparición de 'Helado':",primeraHelado);
 
-let ultimaHelado = menu6.lastIndexOf("Helado"); // 
+let ultimaHelado = menu6.lastIndexOf("Helado"); 
 console.log("Última aparición de 'Helado':", ultimaHelado);

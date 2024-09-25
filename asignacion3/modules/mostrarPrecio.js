@@ -1,6 +1,7 @@
 export function mostrarPrecio(rutaImagen, nombre, precio) {
     let item = document.getElementById("item");
 
+
     item.innerHTML = ""; 
 
     const img = document.createElement("img");
@@ -22,4 +23,7 @@ export function mostrarPrecio(rutaImagen, nombre, precio) {
     item.innerHTML = ''; 
     item.appendChild(img);
     item.appendChild(container);
+
+
+
 }
